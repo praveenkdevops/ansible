@@ -1,0 +1,35 @@
+--- 
+- hosts:
+   - dev
+   - test
+  vars_files:
+   - valut.yml
+   - user_list.yml
+  tasks:
+   - group:
+       name: devops
+       state: present
+   - user:
+       name: "{{ item }}"
+       password: "{{ dev_pass | password_hash('sha512') }}"
+       groups: devops
+       append: yes
+       state: present
+     with_items: 
+       - "{{ developer }}"
+- hosts: prod
+  vars_files:
+   - valut.yml
+   - user_list.yml
+  tasks:
+   - group:
+       name: opsmgr
+       state: present
+   - user:
+       name: "{{ item }}"
+       password: "{{ mgr_pass | password_hash('sha512') }}"
+       groups: opsmgr
+       append: yes
+       state: present
+     with_items:
+       - "{{ manager }}"

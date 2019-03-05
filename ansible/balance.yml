@@ -1,0 +1,10 @@
+---
+- name: balancers playbook
+  hosts: balancers
+  roles:
+   - balancer
+
+- name: phphello role
+  hosts: webservers
+  roles:
+   - phphello

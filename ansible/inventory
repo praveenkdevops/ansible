@@ -1,0 +1,15 @@
+[dev]
+node1
+
+[test]
+node2
+
+[prod]
+node3 ansible_ip=192.168.122.154
+node4 ansible_ip=192.168.122.156
+
+[balancers]
+node5
+
+[webservers:children]
+prod

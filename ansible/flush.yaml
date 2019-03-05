@@ -1,0 +1,15 @@
+---
+- name: create partiton
+  hosts: all
+  tasks:
+
+      - mount:
+         path: /mount1
+         src: /dev/vdb1
+         fstype: ext4
+         state: absent
+      - name: parted
+        parted:
+          device: /dev/vdb
+          number: 1
+          state: absent

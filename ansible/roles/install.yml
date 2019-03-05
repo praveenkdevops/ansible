@@ -1,0 +1,6 @@
+---
+- name: balancer
+  src: http://192.168.10.254/ex407/role1.tar.gz
+
+- name: phphello
+  src: http://192.168.10.254/ex407/role2.tar.gz

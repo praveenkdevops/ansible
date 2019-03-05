@@ -1,0 +1,9 @@
+- name: Configure time synchronization with NTP servers
+  hosts: all
+  vars:
+    timesync_ntp_servers:
+      - hostname: 192.168.10.254
+        iburst: yes
+    timesysnc_ntp_provider: ntp
+  roles:
+    - timesync

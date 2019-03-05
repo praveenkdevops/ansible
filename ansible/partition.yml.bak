@@ -1,0 +1,40 @@
+---
+- name: partiton
+  hosts: all
+  tasks:
+    - block:
+       - block:
+           - parted:
+               device: /dev/vdb
+               number: 1
+               state: present
+               part_start: 1500MiB
+         when: ansible_devices.vdb.size > '1500MiB'
+
+       - block:
+           - debug: msg="Requested size is not present"
+             when: ansible_devices.vdb.size < '800MiB'
+           - parted:
+               device: /dev/vdb
+               number: 1
+               state: present
+               part_start: 800MiB
+         when: ansible_devices.vdb.size < '800MiB'
+      when: ansible_devices.vdb is defined
+
+
+    - block:
+      - name: Create a ext4 filesystem on /dev/vdb1
+        filesystem:
+          fstype: ext4
+          dev: /dev/vdb1
+      - mount:
+          path: /mount1
+          src: /dev/vdb1
+          fstype: ext4
+          state: mounted
+      when: ansible_devices.vdb is defined
+
+    - debug:
+       msg: "Devices is not present"
+      when: ansible_devices.vdb is not defined  

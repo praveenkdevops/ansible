@@ -1,0 +1,18 @@
+---
+- name: Configure web content directory
+  hosts: dev
+  tasks:
+   - file:
+      path: /webdev
+      state: directory
+      mode: 2775
+      group: apache
+
+   - file:
+      src: /webdev
+      dest: /var/www/html/webdev
+      state: link
+   - copy:
+      content: "Development"
+      dest: /webdev/index.html
+      
