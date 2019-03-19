@@ -1,0 +1,301 @@
+1  ssh-copy-id node1
+    2  ssh node1
+    3  ssh node2
+    4  ssh-copy-id ndoe2
+    5  ssh-copy-id node2
+    6  ssh-copy-id registry
+    7  hostname
+    8  vim /etc/hostname 
+    9  vi /etc/yum.repos.d/a.repo
+   10  ssh-keygen 
+   11  vi /etc/hosts
+   12  scp /etc/hosts  station191
+   13  scp /etc/hosts  station191:/etc/
+   14  ssh-copy-id station191
+   15  ssh-copy-id station157
+   16  ssh-copy-id station200
+   17  scp /etc/hosts station191
+   18  scp /etc/hosts station191:/etc/
+   19  scp /etc/hosts station157:/etc/
+   20  scp /etc/hosts station200:/etc/
+   21  ping registry
+   22  ping node1
+   23  yum install vim bash-completion docker net-tools -y
+   24  scp /etc/yum.repos.d/* node1
+   25  scp /etc/yum.repos.d/* node1:/etc/yum.repos.d/
+   26  scp /etc/yum.repos.d/* station191:/etc/yum.repos.d/
+   27  scp /etc/yum.repos.d/* station157:/etc/yum.repos.d/
+   28  scp /etc/yum.repos.d/* station200:/etc/yum.repos.d/
+   29  yum install vim bash-completion docker net-tools -y
+   30  vim 
+   31  bash
+   32  ssh registry
+   33  vim /etc/fstab 
+   34  swapoff -a
+   35  systemctl status docker
+   36  systemctl status kubelet
+   37  yum install kubeadm kubelet kubectl
+   38  systemctl status firewalld
+   39  firewall-cmd --list-ports 
+   40  yum install kubelet kubeadm kubectl -y 
+   41  geten
+   42  getenforce 
+   43  systemctl enable --now kubelet
+   44  kubeadm init --pod-network-cidr=172.24.0.0/16
+   45  mkdir -p /root/.kube
+   46  cp -i /etc/kubernetes/admin.conf  .kube/config
+   47  kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml
+   48  kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml 
+   49  kubectl get nodes
+   50  cd /etc/kubernetes/
+   51  ls
+   52  scp admin.conf bhanu@192.168.10.218:/home/bhanu/.kube/config
+   53  kubectl get deployments.
+   54  d
+   55  p
+   56  ls
+   57  owd
+   58  mkdir kube
+   59  cd kube/
+   60  ls
+   61  vim Dockerfile
+   62  echo hello mdhack.html  >mdhack.html 
+   63  cat `mdhack.html
+   64  cat mdhack.html 
+   65  ls
+   66  docker build -t registry:5000/nginx:master
+   67  docker build -t registry:5000/nginx:master .
+   68  docker images
+   69  docker push  registry:5000/nginx:master
+   70  kubectl create deployment mdhack --image=registry:5000/nginx:master
+   71  d
+   72  p
+   73  p -o wide
+   74  ls
+   75  d -o wid
+   76  d -o wide
+   77  cat mdhack.html 
+   78  echo mdhack.html  second > mdhack.html 
+   79  docker build -t registry:5000/nginx2:master .
+   80  docker push registry:5000/nginx2:master
+   81  kubectl set image  deployment/mdhack    nginx=registry:5000/nginx2:master
+   82  p
+   83  p -o wide
+   84  d
+   85  p
+   86  docker
+   87  docker-current 
+   88  l
+   89  ls
+   90  ssh node1
+   91  ssh node2
+   92  n
+   93  s
+   94  d
+   95  p
+   96  ls
+   97  n
+   98  p
+   99  d
+  100  s
+  101  curl localhost:31383
+  102  curl 192.168.10.192:31383
+  103  curl 192.168.10.192:31383/mdhack.html
+  104  p
+  105  kubectl exec mdhack-756b644865-r2v8n 'ls /usr/share/nginx/html/'
+  106  kubectl exec mdhack-756b644865-r2v8n ls /usr/share/nginx/html/
+  107  curl 192.168.10.192:31383/mdhack.html
+  108  curl 192.168.10.192:31383/50x.html
+  109  curl 192.168.10.192:31383/mdhack.html
+  110  p
+  111  d
+  112  s
+  113  kubectl expose deployment mdhack --type=NodePort --port=80
+  114  s
+  115  n
+  116  redhat
+  117  kubectl get nodes
+  118  docker images
+  119  vim /etc/docker/daemon.json 
+  120  systemctl daemon-reload
+  121  systemctl restart docker
+  122  docker images
+  123  docker pull hello-world
+  124  docker images
+  125  docker tag fce289e99eb9 registry:5000/hello:master
+  126  docker push registry:5000/hello:master
+  127  l
+  128  ls
+  129  rm station191 
+  130  rm station191 y
+  131  ls
+  132  kubectl get nodes
+  133  vim /root/.bashrc 
+  134  bash
+  135  cat /etc/hosts
+  136  1n
+  137  n
+  138  d
+  139  s
+  140  p
+  141  hson
+  142  hostname
+  143  cat /etc/hosts
+  144  n
+  145  d
+  146  kubectl delete deployments dutta 
+  147  kubectl delete deployments redhat 
+  148  kubectl delete deployments mdhack 
+  149  kubectl get deployments
+  150  kubectl get deployment
+  151  kubectl get pod
+  152  kubectl get pods
+  153  cd /opt/
+  154  ls
+  155  mkdir case1 case2
+  156  cd case1
+  157  git clone https://github.com/pixelsign/html5-device-mockups.git
+  158  yum install git
+  159  git clone https://github.com/pixelsign/html5-device-mockups.git
+  160  ls
+  161  mv html5-device-mockups webpage1
+  162  ls
+  163  touch Dockerfile
+  164  vim Dockerfile 
+  165  docker build -t webpage1:v1 .
+  166  docker images
+  167  docker run -itd -p 9020:80 webpage1
+  168  docker run -itd -p 9020:80 webpage1:v1
+  169  ip a
+  170  hostname
+  171  docker ps
+  172  docker stop keen_pike 
+  173  docker rm keen_pike 
+  174  ls
+  175  kubectl create deployment webpagev1 --image=webpage1:v1
+  176  kubectl get deployments
+  177  kubectl get pods
+  178  kubectl delete deployment webpagev1 
+  179  kubectl get deployments
+  180  ls
+  181  docker tag webpage1:v1  192.168.10.200:5000/webpage1:v1
+  182  docker push 192.168.10.200:5000/webpage1:v1
+  183  docker tag webpage1:v1  registry:5000/webpage1:v1
+  184  docker push registry:5000/webpage1:v1
+  185  kubectl get pods
+  186  docker images
+  187  kubectl create deployment webpage1 --image=registry:5000/webpage1:v1
+  188  kubectl get deployments
+  189  kubectl get pods
+  190  kubectl get pods -o wide
+  191* curl 172.24.2.16
+  192  kubectl get svc
+  193  kubectl delete svc mdhack 
+  194  kubectl delete svc redhat 
+  195  kubectl delete svc dutta 
+  196  kubectl get svc
+  197  kubectl get deployments
+  198  kubectl expose deployment webpage1  --type=loadbalancer
+  199  kubectl expose deployment webpage1  --type=loadbalancer --port=80
+  200  kubectl expose deployment webpage1  --type=LoadBalancer --port=80
+  201  kubectl get svc
+  202  cd ../case2/
+  203  ls
+  204  git clone https://github.com/h5bp/html5boilerplate.com.git
+  205  git clone https://github.com/surjithctly/documentation-html-template.git webpage2
+  206  ls
+  207  rm -rf html5boilerplate.com/
+  208  ls
+  209  cd webpage2/
+  210  ll
+  211  cd ..
+  212  ls
+  213  vim Dockerfile
+  214  docker build -t webpage2:v1 .
+  215  docker images
+  216  docker tag webpage2:v1 regisrty:5000/webpage2:v1
+  217  docker push registry:5000/webpage2:v1
+  218  docker images
+  219  docker push regisrty:5000/webpage2
+  220  docker push regisrty:5000/webpage2:v1
+  221  docker push registry:5000/webpage2:v1
+  222  docker rm regisrty:5000/webpage2
+  223  docker rmi regisrty:5000/webpage2
+  224  docker rmi 6d7
+  225  docker images
+  226  docker rmi 6d7d102495e8
+  227  docker rmi 6d7d102495e8 -f
+  228  docker images
+  229* docker mri 192.168.10.200:5000/webpage1 
+  230  docker images
+  231  docker rmi 2ef7505dacdd -f
+  232  docker images
+  233  docker build -t webpage2:v1 .
+  234  docker images
+  235  docker tag webpage2 registry:5000/webpage2:v1
+  236  docker tag d1e0600e658d registry:5000/webpage2:v1
+  237  docker images
+  238  docker push registry:5000/webpage2:v1
+  239  cd ../
+  240  cd case1/`
+  241  cd case1
+  242  ls
+  243  docker build -t webpage1:v1 .
+  244  docker images
+  245  docker tag 57547bae6965 registry:5000/webpage1:v1
+  246  docker images
+  247  docker push registry:5000/webpage1
+  248  cd ../case2
+  249  ls
+  250  kubectl get deployments;
+  251  kubectl get pods -o wide
+  252  curl 172.24.2.16
+  253  kubectl get pods -o wide
+  254  kubectl get svc
+  255  DOCKER IMAGES
+  256  docker images
+  257  kubectl create deployment webpage2 --images=registry:5000/webpage2 --port=80
+  258  docker images
+  259  kubectl create deployment webpage2 --images=registry:5000/webpage2:v1 --port=80
+  260  kubectl create deployment webpage2 --image=registry:5000/webpage2:v1 --port=80
+  261  kubectl create deployment webpage2 --image=registry:5000/webpage2:v1 
+  262  kubectl get deployments
+  263  kubctl get pods
+  264  kubectl get pods
+  265* kubectl describe pode webpage2/
+  266  kubectl get pod webpage2-77b6bf87d7-hbpd4 
+  267  kubectl describe pod webpage2-77b6bf87d7-hbpd4 
+  268  cat Dockerfile 
+  269  kubectl create deployment webpage12 --image=registry:5000/webpage2:v1 
+  270  kubectl get deployments
+  271  kubectl get pods
+  272  kubectl get deployments
+  273  docker images
+  274  docker push registry:5000/webpage2:v1 
+  275  kubectl create deployment webpage123 --image=registry:5000/webpage2:v1 
+  276  p
+  277  cd ../
+  278  ls
+  279  cd case1
+  280  cd webpage1/
+  281  ls
+  282  vim index.html 
+  283  ls
+  284  cd  ..
+  285  ls
+  286  docker build -t wepage1:v2 .
+  287  docker images
+  288  docker tag 6de1e630e823 registry:5000/webpage1:v2
+  289  docker push registry:5000/webpage1:v2
+  290  kubectl get deployments -o wide
+  291  kubectl set image deployment/webpage1  --image=registry:5000/webpage2:v2
+  292  kubectl set image deployment/webpage1  webpage1=registry:5000/webpage2:v2
+  293  kubectl get eployment
+  294  d
+  295  n
+  296  p
+  297  docker images
+  298  kubectl set image deployment/webpage1  webpage1=registry:5000/webpage1:v2
+  299  d
+  300  p
+  301  p --watch 
